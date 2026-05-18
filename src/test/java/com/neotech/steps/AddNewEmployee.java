@@ -21,7 +21,7 @@ public class AddNewEmployee extends CommonMethods {
 	public void user_enters_employee_first_and_last_name() {
 		waitForVisibility(addEmployeePage.firstName);
 		sendText(addEmployeePage.firstName, "Talen");
-		sendText(personalDetailsPage.middleName, "Horton");
+		sendText(addEmployeePage.middleName, "Horton");
 		sendText(addEmployeePage.lastName, "Tucker");
 	}
 
@@ -42,7 +42,7 @@ public class AddNewEmployee extends CommonMethods {
 	@Then("user verify name on Personal Details page")
 	public void user_verify_name_on_personal_details_page() {
 		waitForVisibility(personalDetailsPage.pimNavName);
-		Assert.assertEquals("Horton Tucker", personalDetailsPage.pimNavName.getText());
+		Assert.assertEquals("Talen Tucker", personalDetailsPage.pimNavName.getText());
 		wait(2);
 	}
 
