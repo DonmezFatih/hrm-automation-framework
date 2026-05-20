@@ -36,6 +36,8 @@ public class ViewEmployeeList extends CommonMethods {
 				Assert.assertEquals(expectedName, name.getText());
 			}
 		}
+		
+		Assert.assertTrue(false);
 	}
 
 }
