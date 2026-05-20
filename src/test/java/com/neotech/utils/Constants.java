@@ -11,5 +11,5 @@ public class Constants {
 
 	public static final String REPORT_FILEPATH = System.getProperty("user.dir") + "/target/html-report/report.html";
 
-	public static final String SCREENSHOT_FILEPATH = System.getProperty("user.dir") + "/target/screenshots/";
+	public static final String SCREENSHOT_FILEPATH = System.getProperty("user.dir") + "/screenshots/";
 }

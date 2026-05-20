@@ -534,19 +534,30 @@ public class CommonMethods extends PageInitializer {
 	 * @param fileName
 	 */
 	public static String takeScreenshot(String fileName) {
-		TakesScreenshot ts = (TakesScreenshot) driver;
 
-		File source = ts.getScreenshotAs(OutputType.FILE);
+	    TakesScreenshot ts = (TakesScreenshot) driver;
+	    File source = ts.getScreenshotAs(OutputType.FILE);
 
-		String destination = Constants.SCREENSHOT_FILEPATH + fileName + getTimeStamp() + ".png";
+	    String destination =
+	            Constants.SCREENSHOT_FILEPATH
+	                    + fileName
+	                    + getTimeStamp()
+	                    + ".png";
 
-		try {
-			Files.copy(source, new File(destination));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    try {
+	        File folder = new File(Constants.SCREENSHOT_FILEPATH);
 
-		return destination;
+	        if (!folder.exists()) {
+	            folder.mkdirs();
+	        }
+
+	        Files.copy(source, new File(destination));
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    return destination;
 	}
 
 	/**
