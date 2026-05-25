@@ -18,6 +18,7 @@ public class ViewEmployeeList extends CommonMethods {
 		click(navbar.PIM);
 		click(navbar.PIMEmployeeListLink);
 	}
+	
 	@Then("user verify name in the list")
 	public void user_verify_name_in_the_list() {
 		waitForVisibility(employeeListPage.pageTitle);
@@ -36,8 +37,6 @@ public class ViewEmployeeList extends CommonMethods {
 				Assert.assertEquals(expectedName, name.getText());
 			}
 		}
-		
-		Assert.assertTrue(false);
 	}
 
 }
