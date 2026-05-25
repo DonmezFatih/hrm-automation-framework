@@ -8,18 +8,19 @@
 
 
 	<properties>
-		<maven.compiler.source>21</maven.compiler.source>
-		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.source>25</maven.compiler.source>
+		<maven.compiler.target>25</maven.compiler.target>
 	</properties>
 
 
 	<dependencies>
-		<!--
+		<!-- Source:
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.38.0</version>
+			<version>4.44.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
