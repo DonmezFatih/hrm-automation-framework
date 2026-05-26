@@ -1,7 +1,7 @@
 package com.neotech.steps;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import com.neotech.utils.CommonMethods;
 
@@ -19,19 +19,22 @@ public class Hooks extends CommonMethods {
 
 	@After
 	public void end(Scenario scenario) {
-		
-        System.out.println("HOOK RUN: " + scenario.getName());
 
-	    try {
-	        if (scenario.isFailed()) {
-	            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-	            scenario.attach(screenshot, "image/png", scenario.getName());
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    } finally {
-	        tearDown();
-	    }
+		if (scenario.isFailed()) {
+
+			String path = takeScreenshot(scenario.getName());
+
+			try {
+				byte[] screenshot = Files.readAllBytes(Paths.get(path));
+
+				scenario.attach(screenshot, "image/png", scenario.getName());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		tearDown();
+
 	}
 
 }
