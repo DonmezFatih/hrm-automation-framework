@@ -527,38 +527,38 @@ public class CommonMethods extends PageInitializer {
 		}
 	}
 
-	/**
-	 * This method will take a screenshot saves it in the screenshots folder with
-	 * the given fileName.
-	 * 
-	 * @param fileName
-	 */
-	public static String takeScreenshot(String fileName) {
-
-	    TakesScreenshot ts = (TakesScreenshot) driver;
-	    File source = ts.getScreenshotAs(OutputType.FILE);
-
-	    String destination =
-	            Constants.SCREENSHOT_FILEPATH
-	                    + fileName
-	                    + getTimeStamp()
-	                    + ".png";
-
-	    try {
-	        File folder = new File(Constants.SCREENSHOT_FILEPATH);
-
-	        if (!folder.exists()) {
-	            folder.mkdirs();
-	        }
-
-	        Files.copy(source, new File(destination));
-
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-
-	    return destination;
-	}
+//	/**
+//	 * This method will take a screenshot saves it in the screenshots folder with
+//	 * the given fileName.
+//	 * 
+//	 * @param fileName
+//	 */
+//	public static String takeScreenshot(String fileName) {
+//
+//	    TakesScreenshot ts = (TakesScreenshot) driver;
+//	    File source = ts.getScreenshotAs(OutputType.FILE);
+//
+//	    String destination =
+//	            Constants.SCREENSHOT_FILEPATH
+//	                    + fileName
+//	                    + getTimeStamp()
+//	                    + ".png";
+//
+//	    try {
+//	        File folder = new File(Constants.SCREENSHOT_FILEPATH);
+//
+//	        if (!folder.exists()) {
+//	            folder.mkdirs();
+//	        }
+//
+//	        Files.copy(source, new File(destination));
+//
+//	    } catch (IOException e) {
+//	        e.printStackTrace();
+//	    }
+//
+//	    return destination;
+//	}
 
 	/**
 	 * This method returns the current timestamp in the format of
