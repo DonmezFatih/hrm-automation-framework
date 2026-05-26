@@ -14,8 +14,10 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true,
 
-		tags = "@Sprint-7")
+		tags = "@regression",
 
-public class Sprint7Runner {
+		plugin = { "pretty", "json:target/cucumber.json", "html:target/cucumber-report.html",  "rerun:target/rerun.txt" })
+
+public class RegressionRunner {
 
 }

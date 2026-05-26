@@ -14,8 +14,10 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true,
 
-		tags = "@Sprint-9")
+		tags = "@smoke",
 
-public class Sprint9Runner {
+		plugin = { "pretty", "json:target/cucumber.json", "html:target/cucumber-report.html",  "rerun:target/rerun.txt" })
+
+public class SmokeRunner {
 
 }
