@@ -6,15 +6,12 @@ import io.restassured.specification.RequestSpecification;
 public class ApiClient {
 
     static {
-        RestAssured.baseURI =
-                "https://hrm.neotechacademy.com";
+        RestAssured.baseURI = "https://hrm.neotechacademy.com";
     }
 
     public static RequestSpecification request() {
-
         return RestAssured
                 .given()
-                .header("Content-Type",
-                        "application/json");
+                .header("Content-Type", "application/json");
     }
 }

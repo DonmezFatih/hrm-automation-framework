@@ -38,7 +38,6 @@ public class ViewEmployeeList extends CommonMethods {
 			}
 		}
 		
-		Assert.assertTrue(false);
 	}
 
 }

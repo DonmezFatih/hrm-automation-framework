@@ -528,36 +528,37 @@ public class CommonMethods extends PageInitializer {
 	}
 
 	/**
-	 * This method will take a screenshot saves it in the screenshots folder with
-	 * the given fileName.
-	 * 
+	 * This method will take a screenshot and save it under passed/ or failed/
+	 * folder.
+	 *
+	 * @param status
 	 * @param fileName
 	 */
-	public static String takeScreenshot(String fileName) {
+	public static String takeScreenshot(String status, String fileName) {
 
-	    TakesScreenshot ts = (TakesScreenshot) driver;
-	    File source = ts.getScreenshotAs(OutputType.FILE);
+		TakesScreenshot ts = (TakesScreenshot) driver;
 
-	    String destination =
-	            Constants.SCREENSHOT_FILEPATH
-	                    + fileName
-	                    + getTimeStamp()
-	                    + ".png";
+		File source = ts.getScreenshotAs(OutputType.FILE);
 
-	    try {
-	        File folder = new File(Constants.SCREENSHOT_FILEPATH);
+		String folderPath = Constants.SCREENSHOT_FILEPATH + status + "/";
 
-	        if (!folder.exists()) {
-	            folder.mkdirs();
-	        }
+		String destination = folderPath + fileName + getTimeStamp() + ".png";
 
-	        Files.copy(source, new File(destination));
+		try {
 
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
+			File folder = new File(folderPath);
 
-	    return destination;
+			if (!folder.exists()) {
+				folder.mkdirs();
+			}
+
+			Files.copy(source, new File(destination));
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return destination;
 	}
 
 	/**

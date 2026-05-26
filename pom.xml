@@ -82,7 +82,7 @@
 				<version>3.5.3</version>
 				<configuration>
 					<includes>
-						<include> **/*TestRunner.java </include>
+						<include>**/*Runner.java</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>

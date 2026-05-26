@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
 
 		tags = "@Sprint-3",
 
-		plugin = { "pretty", "json:target/cucumber.json", "html:target/cucumber-report.html" })
+		plugin = { "pretty", "json:target/cucumber.json", "html:target/cucumber-report.html",  "rerun:target/rerun.txt" })
 
 public class TestRunner {
 
