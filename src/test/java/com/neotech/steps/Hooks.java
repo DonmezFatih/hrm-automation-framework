@@ -19,6 +19,8 @@ public class Hooks extends CommonMethods {
 
 	@After
 	public void end(Scenario scenario) {
+		
+        System.out.println("HOOK RUN: " + scenario.getName());
 
 	    try {
 	        if (scenario.isFailed()) {
