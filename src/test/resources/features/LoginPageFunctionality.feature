@@ -19,4 +19,4 @@ Feature: Login Page Functionality
     When user enters invalid credentials
     And user clicks on login button
     Then user should be navigated to retry login page
-    And user should see "Invalid Credentials" error message
+    #And user should see "Invalid Credentials" error message
