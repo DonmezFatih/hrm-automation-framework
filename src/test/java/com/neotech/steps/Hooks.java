@@ -22,7 +22,7 @@ public class Hooks extends CommonMethods {
 	@Before
 	public void start() {
 		setUp();
-		loginPage.adminLogin();
+//		loginPage.adminLogin();
 
 		try {
 

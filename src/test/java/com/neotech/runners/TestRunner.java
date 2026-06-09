@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 
 		monochrome = true,
 
-		tags = "@Sprint-3",
+		tags = "@Sprint-1",
 
 		plugin = { "pretty", "json:target/cucumber.json", "html:target/cucumber-report.html",  "rerun:target/rerun.txt" })
 
