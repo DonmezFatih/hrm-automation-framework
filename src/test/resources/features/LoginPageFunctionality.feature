@@ -14,9 +14,9 @@ Feature: Login Page Functionality
     When user clicks on login button
     Then user should see error messages
 
-  @Sprint-1
+  @Sprint-2
   Scenario: User should be redirected to Retry Login page with invalid credentials
     When user enters invalid credentials
     And user clicks on login button
     Then user should be navigated to retry login page
-    #And user should see "Invalid Credentials" error message
+    And user should see "Invalid Credentials" error message
